@@ -1,0 +1,26 @@
+
+<app-hiang></app-hiang>
+
+<div *ngIf="!login">
+  <div>hi login plz</div>
+  <input type="text" placeholder="id" [(ngModel)]="id"/>
+  <input type="text" placeholder="pwd" [(ngModel)]="pwd"/>
+  <button (click)="tryLogin()">Login</button>
+</div>
+<div *ngIf="login">
+  <button (click)="tryLogout()">logout</button>
+</div>
+
+
+<div *ngIf="vis1">
+  <app-test *ngIf="visible"></app-test>
+  <button (click)="changeVs()">
+    <p *ngIf="visible">yes</p>
+    <p *ngIf="!visible">no</p>
+  </button>
+</div>
+<div *ngIf="vis2">
+  <button (click)="clickhi()">hi it will print on console</button>
+  <p>{{title}}</p>
+  <p *ngFor="let item of showArray">{{item}}</p>
+</div>
